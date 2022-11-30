@@ -7,9 +7,9 @@
     $tasks = file_get_contents($file_url);
     $toDoTasks = json_decode($tasks);
 
-    if(isset($_POST['text'])){
+    if(isset($_POST['newToDo'])){
         $taskToDo = [
-            'text' => $_POST['text'],
+            'text' => $_POST['newToDo'],
             'done' => $_POST['done'] //  'done' => false
         ];
 
