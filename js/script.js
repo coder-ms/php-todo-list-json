@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
-            newToDo: '',
+            newToDoText: '',
             listToDo: [],
             apiUrl: './server.php'
         }
@@ -11,20 +11,20 @@ createApp({
     methods:{
         getToDoList(){
             axios.get(this.apiUrl).then((response) => {
-                this.newToDo = response.data;
+                this.listToDo = response.data;
             });
         },
         addNewToDo(){
             const data ={
-                toDoTxt: this.toDoTxt,
+                newToDoText: this.newToDoText,
             }
             axios.post(
                 this.apiUrl,
                 data,
                 {headers: {'Content-Type': 'multipart/form-data'} }
             ).then((response) => {
-                this.addNewToDo();
-                this.newToDo = '';
+                this.getToDoList();
+                this.newToDoText = '';
             });
         },
     },
