@@ -10,7 +10,7 @@
     if(isset($_POST['newToDoText'])){
         $newTaskToDo = [
             'text' => $_POST['newToDoText'],
-            'done' => $_POST['done'] //  'done' => false
+            'done' => false
         ];
 
         array_push($toDoList, $newTaskToDo);

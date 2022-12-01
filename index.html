@@ -50,7 +50,7 @@ Abilitare l’eliminazione di un task
             <div class="text-center">
                 <h1 class="text-center">TODO LIST</h1>
                 <input type="text" placeholder="Aggiungi in lista" v-model="newToDoText" name="newToDoText">
-                <button @click="addNewToDo">Aggiungi</button>
+                <button class="button" @click="addNewToDo">Aggiungi</button>
                 <h2>Lista delle cose da fare</h2>
                 <ul>
                     <li v-for="(todo, index) in listToDo" class="todo" :class="todo.done ? 'done' : ''">{{todo.text}}</li>
