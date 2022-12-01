@@ -5,7 +5,7 @@
 
     $file_json = './data.json';
     $tasks = file_get_contents($file_json);
-    $toDoList = json_decode($tasks);
+    $toDoList = json_decode($tasks, true);
 
     if(isset($_POST['newToDoText'])){
         $newTaskToDo = [
@@ -15,7 +15,7 @@
 
         array_push($toDoList, $newTaskToDo);
 
-        file_put_contents($file_url, json_encode($toDoList));
+        file_put_contents($file_json, json_encode($toDoList));
     }
     else{
         header('Content-Type: application/json');
